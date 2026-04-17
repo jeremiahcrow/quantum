@@ -8,10 +8,12 @@
         /* Academic Scholarly CSS Reset and Styling */
         :root {
             --text-main: #1a1a1a;
-            --link-color: #003399; /* Classic academic blue */
+            --link-color: #0047AB; /* Elegant Cobalt Blue */
             --border-light: #cccccc;
-            --bg-color: #fdfdfd;
-            --abstract-bg: #f5f5f5;
+            --bg-color: #f8fafc; /* Softer, cleaner white/gray */
+            --abstract-bg: #eef2ff; /* Subtle academic blue tint for abstract */
+            --header-color: #1e3a8a; /* Deep academic blue for headers */
+            --table-header: #f1f5f9;
         }
 
         body {
@@ -40,13 +42,23 @@
         .subtitle {
             text-align: center;
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: #444;
+        }
+
+        .author-block {
+            text-align: center;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 2rem;
+            font-style: italic;
         }
 
         h2 {
             font-size: 1.4rem;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 2px solid var(--header-color);
+            color: var(--header-color);
             padding-bottom: 0.3rem;
             margin-top: 3rem;
             text-transform: uppercase;
@@ -57,7 +69,7 @@
             background-color: var(--abstract-bg);
             padding: 1.5rem 2rem;
             margin: 2rem 0;
-            border-left: 4px solid #333;
+            border-left: 4px solid var(--header-color);
             font-size: 0.95rem;
         }
 
@@ -66,6 +78,33 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 0.05em;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--header-color);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.4rem;
         }
 
         .audio-embed {
@@ -125,6 +164,45 @@
             margin: 3rem 0;
         }
 
+        /* Table Styling for Academic Look */
+        .table-container {
+            overflow-x: auto; /* Ensures mobile responsiveness */
+            margin: 2rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            min-width: 600px; /* Prevents text squishing on mobile */
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        th {
+            background-color: var(--table-header);
+            color: var(--header-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--header-color);
+        }
+
+        tbody tr:hover {
+            background-color: #f8fafc; /* Subtle hover effect for readability */
+        }
+
         .footer {
             text-align: center;
             font-size: 0.85rem;
@@ -139,49 +217,159 @@
     <header>
         <h1>The Quantum Shift: Principles, Cryptographic Impact, and the Alabama Ecosystem</h1>
         <div class="subtitle">A High-Level Analysis of Post-Quantum Readiness and Regional R&D</div>
+        <div class="author-block">
+            Prepared by: Jeremiah Crow <br>
+            Intro to Artificial Intelligence | Spring 2026
+        </div>
     </header>
 
     <div class="abstract">
         <p><strong>Abstract—</strong>This briefing explores the fundamental shift from classical binary architecture to quantum mechanical data processing. It details the operational mechanics of qubits, examines the imminent threat of Shor's Algorithm to global RSA infrastructure, and highlights the aggressive mitigation strategies and technological developments currently centralized in Huntsville, Alabama.</p>
     </div>
 
+    <!-- AUDIO ADDENDUM (Using your specific Google Drive link properly formatted for embedding) -->
     <div class="audio-embed">
         <p><strong>MULTIMEDIA ADDENDUM: AUDIO OVERVIEW</strong></p>
         <iframe src="https://drive.google.com/file/d/1fEZGWLWq8Ch2TsvniTj9Pv1ewny5CYrn/preview" width="100%" height="150" allow="autoplay" title="Quantum Computing Podcast Embed"></iframe>
     </div>
 
-    <section>
-        <h2>I. Introduction to Quantum Architecture</h2>
-        <p>Classical computational frameworks rely on a deterministic binary state (Bits), functioning exclusively as discrete states of 0 or 1. As classical transistors approach the atomic limit—resulting in uncontrolled quantum tunneling—the physical scaling of classical architecture is failing. Quantum computing circumvents this by utilizing <strong>Qubits</strong>. Operating on the principles of quantum mechanics, qubits do not process sequentially; rather, they allow for multidimensional computational spaces that can evaluate intractably large datasets simultaneously.</p>
+    <div class="toc">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#section-1">I. The Limits of Classical Computing</a></li>
+            <li><a href="#section-2">II. Core Quantum Mechanics</a></li>
+            <li><a href="#section-3">III. Algorithms, Hardware, & Real-World Impact</a></li>
+            <li><a href="#section-4">IV. Regional R&D: The Alabama Ecosystem</a></li>
+            <li><a href="#section-5">V. Bibliography & Curated References</a></li>
+        </ul>
+    </div>
+
+    <section id="section-1">
+        <h2>I. The Limits of Classical Computing</h2>
+        <p>Classical computational frameworks rely on a deterministic binary state (Bits), functioning exclusively as discrete states of 0 or 1. Historically, <strong>Moore's Law</strong> dictated that computing power would double roughly every two years as microscopic transistors shrank. However, these silicon-based switches are currently hitting physical atomic limits. At a scale of just a few nanometers, the physical barriers are so thin that electricity "teleports" through them—a phenomenon known as <strong>Quantum Tunneling</strong>. This uncontrolled leakage breaks standard binary logic, necessitating a transition to quantum architectures.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Classical Computing</th>
+                        <th>Quantum Computing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fundamental Data Unit</strong></td>
+                        <td><strong>Bit:</strong> A deterministic state representing exactly 0 or 1.</td>
+                        <td><strong>Qubit:</strong> A probabilistic state; can be 0, 1, or a continuous superposition of both simultaneously.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processing Paradigm</strong></td>
+                        <td><strong>Sequential:</strong> Processes operations step-by-step using linear tasks.</td>
+                        <td><strong>Multidimensional:</strong> Evaluates vast possibility spaces simultaneously, yielding a single probabilistic result via wave interference.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hardware & Environment</strong></td>
+                        <td>Silicon-based CMOS circuits. Highly stable at room temperature.</td>
+                        <td>Highly experimental materials (superconducting circuits, trapped ions). Requires cryogenic cooling (~0.015 Kelvin) to prevent decoherence.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
-    <section>
+    <section id="section-2">
         <h2>II. Core Quantum Mechanics</h2>
-        <p>The efficacy of a quantum processor is derived from three primary phenomena:</p>
+        <p>Quantum computing circumvents classical limitations by leveraging the physical rules of the subatomic realm. The efficacy of a quantum processor is derived from three primary phenomena:</p>
         <ul>
-            <li><strong>Superposition:</strong> The capacity of a qubit to exist in a linear combination of the states |0⟩ and |1⟩ simultaneously until a measurement collapses the state.</li>
-            <li><strong>Entanglement:</strong> A deeply correlated state between two or more qubits where the quantum state of one cannot be described independently of the state of the others, enabling instantaneous state-sharing regardless of spatial separation.</li>
-            <li><strong>Interference:</strong> The algorithmic manipulation of quantum waveforms to systematically amplify the probability amplitude of the correct computational output (constructive interference) while canceling out erroneous data (destructive interference).</li>
+            <li><strong>Superposition:</strong> The capacity of a qubit to exist in a linear combination of states simultaneously (analogous to a spinning coin). This allows the system to maintain a superposition of all 2<sup>N</sup> possible states at once.</li>
+            <li><strong>Entanglement:</strong> A deeply correlated state where measuring or changing one qubit instantly affects the other, regardless of physical distance.</li>
+            <li><strong>Interference:</strong> Because quantum algorithms generate many erroneous computations alongside the correct one, algorithms utilize wave interference to systematically amplify the probability amplitude of the correct output (constructive interference) while canceling out noise (destructive interference).</li>
         </ul>
     </section>
 
-    <section>
-        <h2>III. Real-World Applications & Cryptographic Threats</h2>
-        <p>The primary near-term application of mature quantum computing lies not in general-purpose processing, but in solving exponentially scaling mathematical problems. The most critical vector is <strong>Shor's Algorithm</strong>, a quantum polynomial-time algorithm for integer factorization. A utility-scale quantum computer running Shor's Algorithm will successfully break modern RSA public-key cryptography in a matter of hours.</p>
-        <p>Consequently, international standards bodies, including the U.S. National Institute of Standards and Technology (NIST), are currently enforcing a global migration to <strong>Post-Quantum Cryptography (PQC)</strong>—utilizing lattice-based mathematics to secure current data infrastructures against "Harvest Now, Decrypt Later" espionage tactics.</p>
+    <section id="section-3">
+        <h2>III. Algorithms, Hardware, & Real-World Impact</h2>
+        <p>The primary near-term application of mature quantum computing lies in solving exponentially scaling mathematical problems. Rather than functioning as general-purpose devices, these systems target intractable simulations, optimizations, and cryptographic structures.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Algorithm / Concept</th>
+                        <th>Mechanism & Global Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Shor's Algorithm</strong></td>
+                        <td>Uses period-finding to instantly calculate prime factorization. <strong>Impact:</strong> Will break modern RSA internet security, triggering current "Harvest Now, Decrypt Later" data theft by hostile actors.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grover's Algorithm</strong></td>
+                        <td>Uses amplitude amplification to search massive, unsorted databases. <strong>Impact:</strong> Provides a quadratic speedup for search tasks and accelerates brute-force password hacking.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Molecular Simulation</strong></td>
+                        <td>Qubits natively mirror the quantum mechanics of atoms. <strong>Impact:</strong> Revolutionizes drug discovery and material science, reducing timelines from decades to hours without exponential classical scaling limits.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-Quantum Cryptography (PQC)</strong></td>
+                        <td>Lattice-based mathematics designed to be quantum-proof. <strong>Impact:</strong> In August 2024, NIST finalized standards forcing a global overhaul of banking, hospital, and military security protocols.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Currently, we operate in the <strong>NISQ (Noisy Intermediate-Scale Quantum) Era</strong>. The race to achieve utility-scale, error-corrected quantum advantage is led by diverse hardware architectures:</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tech Company</th>
+                        <th>Hardware Architecture</th>
+                        <th>Strategic Focus & Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>IBM Quantum</strong></td>
+                        <td>Superconducting Qubits</td>
+                        <td>Industry leader in accessibility. Focuses on utility-scale machines, heavy error mitigation, and cloud access (since 2016).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Sycamore</strong></td>
+                        <td>Superconducting Qubits</td>
+                        <td>Achieved "Quantum Supremacy" in 2019 by completing a 10,000-year classical task in 200 seconds. Highly focused on perfect Quantum Error Correction (QEC).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IonQ</strong></td>
+                        <td>Trapped Ion Qubits</td>
+                        <td>Uses literal atoms suspended by precision lasers. Proving that high-quality, extremely stable qubits can rival larger quantities of noisy qubits.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Azure</strong></td>
+                        <td>Topological Qubits</td>
+                        <td>Theoretical particles whose geometry naturally weaves data together. Highly experimental, but could bypass massive error-correction hurdles entirely.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
-    <section>
+    <section id="section-4">
         <h2>IV. Regional R&D: The Alabama Ecosystem</h2>
-        <p>The transition from theoretical quantum physics to deployable defense hardware is heavily concentrated within the academic and military sectors of Alabama. Key systemic developments include:</p>
+        <p>The transition from theoretical quantum physics to deployable defense hardware is heavily concentrated within the academic and military sectors of Alabama. Huntsville is uniquely positioned, combining world-class academic research with the nation's highest concentration of defense and aerospace contractors.</p>
+        
         <ul>
-            <li><strong>University of Alabama in Huntsville (UAH):</strong> Serving as the nexus for the Southeastern Quantum Collaborative, pioneering workforce development and academic research in quantum photonics.</li>
-            <li><strong>Cummings Research Park:</strong> Hosting the state's first on-site, physical quantum computer through a strategic partnership between D-Wave and Davidson Technologies, directly integrating quantum hardware into the defense contracting supply chain.</li>
-            <li><strong>Redstone Arsenal:</strong> Heavily investing in Quantum Sensing applications to establish un-jammable, non-GPS-reliant navigational arrays for next-generation military defense systems.</li>
+            <li><strong>Military & Government Anchor:</strong> At <em>Redstone Arsenal & Army Futures Command</em>, the military focuses heavily on <strong>Quantum Sensing</strong>. These sensors use sensitive atomic states to measure gravity and acceleration perfectly, enabling submarines and missiles to navigate without jammable GPS satellites. Furthermore, the <em>DoD and DARPA</em> heavily invest locally to build unhackable, entangled communication networks.</li>
+            <li><strong>The University Research Engine:</strong> The <em>University of Alabama in Huntsville (UAH)</em> serves as the epicenter, launching the Southeastern Quantum Collaborative (SQC) to transition photonics research into field-ready tech. Concurrently, the <em>University of Alabama (Tuscaloosa)</em> focuses on foundational quantum information theory, while <em>Auburn University</em> leads in the nanotechnology and advanced materials required to build physical superconducting circuits.</li>
+            <li><strong>Industry & Commercialization:</strong> Within <em>Cummings Research Park</em>—the second-largest research park in the U.S.—contractors like Boeing, SAIC, and Leidos operate. Notably, Davidson Technologies recently partnered with D-Wave to install the state's first physical, on-site quantum computer to integrate this hardware directly into the defense contracting supply chain.</li>
         </ul>
     </section>
 
-    <section>
+    <section id="section-5">
         <h2>V. Bibliography & Curated References</h2>
         <p>For further academic and technical review, the following primary sources are provided:</p>
         <ul class="bibliography">
